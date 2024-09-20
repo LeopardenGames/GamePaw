@@ -38,9 +38,8 @@ def prompt_user_for_info():
     return {
         'username': username,
         'password': password,
-        'email': email
+        'email': email,
         'id': serverid
-        '
     }
 
 def save_to_conf_file(data, filename='user_info.conf'):
