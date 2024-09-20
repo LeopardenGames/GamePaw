@@ -6,6 +6,16 @@ from colorama import init, Fore, Style
 # Initialisiere colorama
 init()
 
+def install_requirements(requirements_file='requirements.txt'):
+    try:
+        subprocess.check_call([sys.executable, '-m', 'pip', 'install', '-r', requirements_file])
+        print("Pakete erfolgreich installiert.")
+    except subprocess.CalledProcessError as e:
+        print(f"Fehler beim Installieren der Pakete: {e}")
+        
+        
+
+
 def prompt_user_for_info():
     """Fragt den Benutzer nach seinen Registrierungsdaten und gibt ein Dictionary zurück."""
     print(Fore.CYAN + "Willkommen zur Benutzerregistrierung!" + Style.RESET_ALL)
@@ -41,3 +51,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+    install_requirements()
+    
