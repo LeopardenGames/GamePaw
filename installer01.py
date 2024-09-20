@@ -18,6 +18,7 @@ def install_requirements(requirements_file='requirements.txt'):
 
 def prompt_user_for_info():
     """Fragt den Benutzer nach seinen Registrierungsdaten und gibt ein Dictionary zurück."""
+    print(Fore.RED + "Registriere dich zuerst auf unserer Webseite!" + Style.RESET_ALL)
     print(Fore.CYAN + "Willkommen zur Benutzerregistrierung!" + Style.RESET_ALL)
     
     username = input(Fore.GREEN + "Benutzername: " + Style.RESET_ALL)
@@ -31,11 +32,15 @@ def prompt_user_for_info():
         return None
     
     email = input(Fore.GREEN + "E-Mail-Adresse: " + Style.RESET_ALL)
+
+    serverid = input(Fore.GREEN + "Server ID: " + Style.RESET_ALL)
     
     return {
         'username': username,
         'password': password,
         'email': email
+        'id': serverid
+        '
     }
 
 def save_to_conf_file(data, filename='user_info.conf'):
